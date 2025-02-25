@@ -5,13 +5,13 @@ High-performance asynchronous JSON parser for Node.js
 ## Installation
 
 ```bash
-npm install fast-json-parser
+npm install node-js-fast-json
 ```
 
 ## Usage
 
 ```javascript
-const fastJsonParser = require('fast-json-parser');
+const fastJsonParser = require('node-js-fast-json');
 
 // Using Promise
 fastJsonParser.parseAsync('{"key": "value"}')
