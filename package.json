@@ -1,11 +1,10 @@
 {
-	"name": "fast-json-parser",
+	"name": "fast-json",
 	"version": "1.0.0",
 	"description": "High-performance asynchronous JSON parser for Node.js",
 	"main": "lib/index.js",
 	"scripts": {
-		"install": "node-gyp rebuild",
-		"test": "node test/test.js"
+		"install": "node-gyp rebuild"
 	},
 	"keywords": [
 		"json",
@@ -19,16 +18,16 @@
 	"author": "Ilia Dernov",
 	"license": "MIT",
 	"dependencies": {
-		"node-addon-api": "^3.0.0"
+		"node-addon-api": "^6.0.0"
 	},
 	"devDependencies": {
-		"node-gyp": "^7.1.2"
+		"node-gyp": "^9.0.0"
 	},
 	"engines": {
-		"node": ">=10.0.0"
+		"node": ">=14.0.0"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/yourusername/fast-json-parser.git"
+		"url": "https://github.com/Shaihulud1/fast_json.git"
 	}
 }
