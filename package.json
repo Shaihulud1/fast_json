@@ -1,5 +1,5 @@
 {
-	"name": "fast-json",
+	"name": "rapid-json",
 	"version": "1.0.0",
 	"description": "High-performance asynchronous JSON parser for Node.js",
 	"main": "lib/index.js",
