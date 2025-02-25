@@ -182,11 +182,9 @@ struct WorkRequest {
 };
 
 void ParseAsyncWork(uv_work_t* req) {
-    std::cout << "ParseAsyncWork started" << std::endl;
     WorkRequest* work_req = static_cast<WorkRequest*>(req->data);
     
     try {
-        std::cout << "Parsing JSON: " << work_req->json << std::endl;
         JsonParser parser(work_req->json);
         work_req->error = ""; // Clear any previous error
     } catch (const std::exception& e) {
@@ -196,11 +194,9 @@ void ParseAsyncWork(uv_work_t* req) {
         work_req->error = "Unknown error occurred";
         std::cerr << "Unknown exception in ParseAsyncWork" << std::endl;
     }
-    std::cout << "ParseAsyncWork finished" << std::endl;
 }
 
 void ParseAsyncAfter(uv_work_t* req, int status) {
-    std::cout << "ParseAsyncAfter started" << std::endl;
     std::unique_ptr<WorkRequest> work_req(static_cast<WorkRequest*>(req->data));
     v8::Isolate* isolate = work_req->isolate;
     v8::HandleScope handle_scope(isolate);
@@ -221,11 +217,9 @@ void ParseAsyncAfter(uv_work_t* req, int status) {
     callback->Call(context, v8::Null(isolate), 2, argv).ToLocalChecked();
     
     work_req->callback.Reset();
-    std::cout << "ParseAsyncAfter finished" << std::endl;
 }
 
 void ParseAsync(const v8::FunctionCallbackInfo<v8::Value>& args) {
-    std::cout << "ParseAsync called" << std::endl;
 
     v8::Isolate* isolate = args.GetIsolate();
     v8::HandleScope scope(isolate);
